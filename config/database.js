@@ -2,6 +2,7 @@ let mongoose = require('mongoose');
 let config = require('./configure');
 
 module.exports = () => {
+  mongoose.Promise = global.Promise;
   mongoose.connect(config.database, {
     useNewUrlParser: true
   });
