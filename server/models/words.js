@@ -19,4 +19,4 @@ let WordsSchema = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model('Words', WordsSchema,'lang')
+module.exports = mongoose.model('Words', WordsSchema)
