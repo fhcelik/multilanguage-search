@@ -1,28 +1,37 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+import homeReducer from '../../reducers'
 import Search from '../search';
-import WordItem from './wordItem';
-import {compose,withStateHandlers} from 'recompose';
- 
-    const Home = ({data,fetchWords,searchPhrase}) =>
+import WordItem from '../Links/wordItem.view';
+
+
+
+
+    const Home = ({data}) =>
      (
       <div className="container">
-         <Search
-          onChange={fetchWords}
-          value={searchPhrase}
-        /> 
+     
+        <div>
+          
+         <Search /> 
+      </div>
         <div id={'homeReducer'}>
-           {data.homeReducer.words.map((word,i) =>
-            
+       
+           {data.homeReducer.words.map((phrases,i) =>
+           
             <WordItem
-              key={i}
-              word={word}
+               key={i}
+               phrases={phrases}
+             
             />
-          )} 
+            
+         
+           )} 
   
         </div>
-        {/* <button type="submit" onClick = {onClick}>Submit</button> */}
-        <Link to={`/results`}>Results</Link>
+        <div>
+       
+      </div>
+           
       </div>
     )
   

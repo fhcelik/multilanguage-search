@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
  
 
- const Linked = ({phrases}) =>{ 
+ const SearchItem = ({phrases}) =>{ 
   
   return <div className = 'box'>
     <Link to={{pathname:'/results/'+phrases.word+'/'+phrases.id}}>{phrases.word}</Link> <span>[{phrases.lang}]</span>
@@ -13,7 +13,4 @@ import {Link} from 'react-router-dom';
 
 }
 
-export default Linked;
-  
-  
-
+export default SearchItem;
