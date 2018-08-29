@@ -4,8 +4,8 @@ import homeReducer from './homeReducer';
 import resultReducer from './resultReducer';
 
 export default combineReducers({
-    homeReducer,
-    resultReducer,
+    homeData : homeReducer,
+    resultData : resultReducer,
     
 })
 

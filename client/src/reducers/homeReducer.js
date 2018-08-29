@@ -1,5 +1,3 @@
-
-
 const initialState = {
   words: [],
   sendingRequest: false,
