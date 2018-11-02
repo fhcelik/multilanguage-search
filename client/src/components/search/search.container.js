@@ -1,26 +1,37 @@
 import {connect} from 'react-redux';
 import Search from './Search.view';
 import {findWord} from '../../actions/action';
-import { compose, withHandlers } from 'recompose';
+import {withHandlers} from 'recompose';
+import {compose} from 'redux';
+import HomeReducer from '../../reducers/homeReducer';
 
 const searchPhraseSelector = ({ phrase }) => {phrase}
+
 
 const enhance = compose(
   connect(
     state => ({
-      searchPhrase: searchPhraseSelector(state)
+      searchPhraseda: searchPhraseSelector(state),
+  
     }),
-    findWord
+    {findWord}
   ),
   withHandlers({
-    onChange : props => e => {
-      
-      findWord(e.target.value)
-      
-  }
-
+    // onKeyDown : props => e =>{ 
+    //             time_start = new Date();
+    //             if(e.target.value.length == 1)
+                  
+    // },
+    onChange : ({findWord}) => e => {
+                if(e.target.value.length > 2)
+                  { 
+                    findWord(e.target.value) 
+                  }
+                  else {
+                    findWord(1) 
+                  }
     
-  })
-);
+  } 
+  }))(Search);
 
-export default enhance(Search);
+export default enhance;

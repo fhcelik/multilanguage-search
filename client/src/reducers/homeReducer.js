@@ -1,18 +1,15 @@
-
-
-
 const initialState = {
-  words:[],
+  words: [],
   sendingRequest: false,
-  error: null 
+  error: null
 };
 const HomeReducer = (state = initialState, action) => {
-  let words ;
+  let words;
   switch (action.type) {
-    case 'FETCH_WORD_PENDING': 
-      return { ...state,sendingRequest: true};
+    case 'FETCH_WORD_PENDING':
+      return { ...state, sendingRequest: true };
     case 'FETCH_WORD_FULFILLED':
-      words = action.payload.data;
+      words = action.payload;
       return { ...state, sendingRequest: false, words };
     case 'FETCH_WORD_REJECTED':
       return { ...state, sendingRequest: false, error: `${action.payload.message}` };
