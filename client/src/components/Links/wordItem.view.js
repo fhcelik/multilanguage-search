@@ -1,18 +1,18 @@
-import React,{Component} from 'react';
-import {Link} from 'react-router-dom';
-import '../views/result.css'
+import React from 'react';
+import {withMyActionHandlers} from './link.container'
 
- const Linked = ({phrases}) =>{ 
-  
-  return <div className = 'box'>
- 
-    <Link to={'/entries/'+phrases.word+'/'+phrases.lang}>{phrases.word}</Link> <span>[{phrases.lang}]</span>
-   
+const Link = ({onClick,phrases}) => (
+
+  <div className = 'box'>
+    
+    <a href="#"  onClick={onClick}>{phrases.word}</a>
+    
   </div>
+);
 
-}
+export default Link;
 
-export default Linked;
+
   
   
 

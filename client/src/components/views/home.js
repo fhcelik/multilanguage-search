@@ -1,28 +1,32 @@
 import React, { Component } from "react";
-import Search from '../search';
-import TextField from '@material-ui/core/TextField';
-import {compose,withState,withHandlers,withStateHandlers} from 'recompose';
-import { Button } from "../../../../node_modules/@material-ui/core";
 import { Link } from 'react-router-dom';
-
-
-
-const Home = ({value, onChange,onClick}) => <div>
-  <TextField value={value} onChange={onChange} />
-  <Link to={{ pathname: '/results', search: '?word=' +value }}><Button onClick = {onClick}>Submit</Button></Link>
-
-</div>
-
-const Updater = compose (
-  withStateHandlers(
-    () => ({value:''}), 
-    {
-      onChange: ({value}) => (e) => ({value: e.target.value}),
-      onClick : ({value}) => () => console.log(value)
-    }
-   
-)
-);
+import Search from '../search';
+import WordItem from './wordItem';
+import {compose,withStateHandlers} from 'recompose';
+ 
+    const Home = ({data,fetchWords,searchPhrase}) =>
+     (
+      <div className="container">
+         <Search
+          onChange={fetchWords}
+          value={searchPhrase}
+        /> 
+        <div id={'homeReducer'}>
+           {data.homeReducer.words.map((word,i) =>
+            
+            <WordItem
+              key={i}
+              word={word}
+            />
+          )} 
+  
+        </div>
+        {/* <button type="submit" onClick = {onClick}>Submit</button> */}
+        <Link to={`/results`}>Results</Link>
+      </div>
+    )
   
 
-export default Updater(Home);
+
+
+export default Home;
