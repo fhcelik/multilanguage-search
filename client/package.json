@@ -6,7 +6,7 @@
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
     "fs": "^0.0.1-security",
     "history": "^4.7.2",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "material": "^0.2.6",
     "material-ui-search-bar": "^0.4.2",
     "mustache": "^2.3.0",
