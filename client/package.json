@@ -2,7 +2,7 @@
   "name": "multilngual-search",
   "version": "0.1.0",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
     "fs": "^0.0.1-security",
     "history": "^4.7.2",
